@@ -30,25 +30,25 @@
         {
             this.components = new System.ComponentModel.Container();
             this.mvvmContext1 = new DevExpress.Utils.MVVM.MVVMContext(this.components);
-            this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
+            this.btnnewaccount = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.accountBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colAccountNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAccountName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBalance = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnnewaccount = new DevExpress.XtraEditors.SimpleButton();
+            this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
             this.accountBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.accountBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.accountBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.accountBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.mvvmContext1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
-            this.tablePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
+            this.tablePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource1)).BeginInit();
@@ -58,24 +58,22 @@
             // 
             // mvvmContext1
             // 
+            this.mvvmContext1.BindingExpressions.AddRange(new DevExpress.Utils.MVVM.BindingExpression[] {
+            DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(typeof(Test.Components.AccountView.AccountViewModel), "AccountNew", this.btnnewaccount),
+            DevExpress.Utils.MVVM.BindingExpression.CreatePropertyBinding(typeof(Test.Components.AccountView.AccountViewModel), "account", this.gridControl1, "DataSource")});
             this.mvvmContext1.ContainerControl = this;
+            this.mvvmContext1.ViewModelType = typeof(Test.Components.AccountView.AccountViewModel);
             // 
-            // tablePanel1
+            // btnnewaccount
             // 
-            this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 55F)});
-            this.tablePanel1.Controls.Add(this.gridControl1);
-            this.tablePanel1.Controls.Add(this.btnnewaccount);
-            this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tablePanel1.Location = new System.Drawing.Point(0, 0);
-            this.tablePanel1.Name = "tablePanel1";
-            this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 8F),
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
-            this.tablePanel1.Size = new System.Drawing.Size(439, 374);
-            this.tablePanel1.TabIndex = 0;
-            this.tablePanel1.UseSkinIndents = true;
+            this.tablePanel1.SetColumn(this.btnnewaccount, 0);
+            this.btnnewaccount.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnnewaccount.Location = new System.Drawing.Point(13, 12);
+            this.btnnewaccount.Name = "btnnewaccount";
+            this.tablePanel1.SetRow(this.btnnewaccount, 0);
+            this.btnnewaccount.Size = new System.Drawing.Size(91, 22);
+            this.btnnewaccount.TabIndex = 2;
+            this.btnnewaccount.Text = "Konto hinzufügen";
             // 
             // gridControl1
             // 
@@ -128,17 +126,22 @@
             this.colBalance.Visible = true;
             this.colBalance.VisibleIndex = 2;
             // 
-            // btnnewaccount
+            // tablePanel1
             // 
-            this.tablePanel1.SetColumn(this.btnnewaccount, 0);
-            this.btnnewaccount.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnnewaccount.Location = new System.Drawing.Point(13, 12);
-            this.btnnewaccount.Name = "btnnewaccount";
-            this.tablePanel1.SetRow(this.btnnewaccount, 0);
-            this.btnnewaccount.Size = new System.Drawing.Size(91, 22);
-            this.btnnewaccount.TabIndex = 2;
-            this.btnnewaccount.Text = "Konto hinzufügen";
-            this.btnnewaccount.Click += new System.EventHandler(this.AccountNew);
+            this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 55F)});
+            this.tablePanel1.Controls.Add(this.gridControl1);
+            this.tablePanel1.Controls.Add(this.btnnewaccount);
+            this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tablePanel1.Location = new System.Drawing.Point(0, 0);
+            this.tablePanel1.Name = "tablePanel1";
+            this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 8F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
+            this.tablePanel1.Size = new System.Drawing.Size(439, 374);
+            this.tablePanel1.TabIndex = 0;
+            this.tablePanel1.UseSkinIndents = true;
             // 
             // accountBindingSource3
             // 
@@ -156,11 +159,11 @@
             this.Name = "AccountView";
             this.Size = new System.Drawing.Size(439, 374);
             ((System.ComponentModel.ISupportInitialize)(this.mvvmContext1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
-            this.tablePanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
+            this.tablePanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource1)).EndInit();

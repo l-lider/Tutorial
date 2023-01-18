@@ -50,12 +50,10 @@ namespace Test.Data
                     this.AccountNumber = value;
                     this.OnPropretyChanged("AccountNumber");
                 }
-                    
                         
             }
 
         }
-
 
         public string name
         {

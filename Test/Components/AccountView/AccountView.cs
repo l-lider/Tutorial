@@ -1,6 +1,8 @@
-﻿using DevExpress.XtraEditors;
+﻿using DevExpress.Utils.Filtering.Internal;
+using DevExpress.XtraEditors;
 using DevExpress.XtraExport.Helpers;
 using DevExpress.XtraGrid.Columns;
+using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Views.Grid;
 using System;
 using System.Collections.Generic;
@@ -18,30 +20,20 @@ namespace Test.Components.AccountView
 {
     public partial class AccountView : DevExpress.XtraEditors.XtraUserControl
     {
-        private BindingList<Account> account;
         public AccountView()
         {
             InitializeComponent();
-
-            this.account = new BindingList<Account>(Accounts.Konten);
-            var source = new BindingSource(account, null);
-            this.gridControl1.DataSource = account;
+            //this.gridControl1.DataSource = account;
+    
             
         }
 
-        private void AccountNew(object sender, EventArgs e)
-        {
-            using (AccountNew frm = new AccountNew() { AccountInfo = new Account() })
-            {
-                DialogResult dlgResult = frm.ShowDialog();
+        void InitBindings()
+        {   
+            var fluent = mvvmContext1.OfType<AccountViewModel>();
+            fluent.SetBinding(gridControl1, gControl => gControl.DataSource,
+                x => x.account);
 
-                if (dlgResult == DialogResult.OK)
-                {
-                    this.account.Add(frm.AccountInfo);
-
-                }
-                
-            }
         }
 
     }
