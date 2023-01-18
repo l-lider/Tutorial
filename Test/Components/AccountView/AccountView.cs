@@ -23,7 +23,6 @@ namespace Test.Components.AccountView
         public AccountView()
         {
             InitializeComponent();
-            //this.gridControl1.DataSource = account;
     
             
         }
@@ -34,6 +33,8 @@ namespace Test.Components.AccountView
             fluent.SetBinding(gridControl1, gControl => gControl.DataSource,
                 x => x.account);
 
+
+            // event to command (withevent ... tocommand ...)
         }
 
     }

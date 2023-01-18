@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,62 +12,54 @@ namespace Test.Data
     public class Account :INotifyPropertyChanged
     {
 
-        public string AccountNumber { get; set; }
-        public string AccountName { get; set; }
-        public decimal Balance { get; set; }
+        private string _accountNumber { get; set; } 
+        private string _accountName { get; set; }
+        private decimal _balance { get; set; }
 
         
 
         public Account(string kontonummer, string name, decimal kontostand)
         {
-            AccountNumber = kontonummer;
-            AccountName = name;
-            Balance = kontostand;
+            _accountNumber = kontonummer;
+            _accountName = name;
+            _balance = kontostand;
         }
 
         public Account()
         {
         }
 
-        protected virtual void OnPropretyChanged(string propertyName)
-        {
-            var handler = this.PropertyChanged;
-            if (handler != null)
-            {
-                handler(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
+        private void OnPropertyChanged([CallerMemberName] string propertyName = null) =>
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
-        public string kontonummer
+        public string AccountNumber
         {
             get
             {
-                return this.AccountNumber;
+                return this._accountNumber;
             }
             set
             {
-                if (this.AccountNumber != value)
+                if (this._accountNumber != value)
                 {
-                    this.AccountNumber = value;
-                    this.OnPropretyChanged("AccountNumber");
-                }
-                        
+                    this._accountNumber = value;
+                    this.OnPropertyChanged("AccountNumber");
+                }    
             }
-
         }
 
-        public string name
+        public string AccountName
         {
             get
             {
-                return this.AccountName;
+                return this._accountName;
             }
             set
             {
-                if (this.AccountName != value)
+                if (this._accountName != value)
                 {
-                    this.AccountName = value;
-                    this.OnPropretyChanged("AccountName");
+                    this._accountName = value;
+                    this.OnPropertyChanged("AccountName");
                 }
 
 
@@ -75,18 +68,18 @@ namespace Test.Data
         }
 
 
-        public decimal kontostand
+        public decimal Balance
         {
             get
             {
-                return this.Balance;
+                return this._balance;
             }
             set
             {
-                if (this.Balance != value)
+                if (this._balance != value)
                 {
-                    this.Balance = value;
-                    this.OnPropretyChanged("Balance");
+                    this._balance = value;
+                    this.OnPropertyChanged("Balance");
                 }
             }
         }

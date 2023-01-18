@@ -13,7 +13,6 @@ namespace Test.Components.AccountView
     public class AccountViewModel
     {
 
-
         public virtual BindingList<Account> account { get; set; } = new BindingList<Account>();
 
         public void AccountNew()
@@ -31,16 +30,15 @@ namespace Test.Components.AccountView
             }
         }
 
-        protected void OnAccountChanged()
-        {
-            this.RaiseCanExecuteChanged(x => x.AccountNew());
-        }
+        //protected void OnAccountChanged()
+        //{
+        //    this.RaiseCanExecuteChanged(x => x.AccountNew());
+        //}
 
         protected AccountViewModel() {
             
             this.account = new BindingList<Account>(Accounts.Konten);
             var source = new BindingSource(account, null);
-            //this.gridControl1.DataSource = account;
        
         }
 
