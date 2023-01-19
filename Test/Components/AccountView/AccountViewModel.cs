@@ -12,8 +12,12 @@ namespace Test.Components.AccountView
     [POCOViewModel]
     public class AccountViewModel
     {
+        public virtual List<Account> Account { get; set; }
 
-        public virtual BindingList<Account> account { get; set; } = new BindingList<Account>();
+        public AccountViewModel()
+        {
+            Account = Accounts.Konten;
+        }
 
         public void AccountNew()
         {
@@ -23,28 +27,10 @@ namespace Test.Components.AccountView
 
                 if (dlgResult == DialogResult.OK)
                 {
-                    this.account.Add(frm.AccountInfo);
+                    this.Account.Add(frm.AccountInfo);
 
                 }
-
             }
-        }
-
-        //protected void OnAccountChanged()
-        //{
-        //    this.RaiseCanExecuteChanged(x => x.AccountNew());
-        //}
-
-        protected AccountViewModel() {
-            
-            this.account = new BindingList<Account>(Accounts.Konten);
-            var source = new BindingSource(account, null);
-       
-        }
-
-        public static AccountViewModel Create()
-        {
-            return ViewModelSource.Create(() => new AccountViewModel());
         }
     }
 }

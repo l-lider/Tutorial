@@ -30,13 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.mvvmContext1 = new DevExpress.Utils.MVVM.MVVMContext(this.components);
-            this.btnnewaccount = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.accountBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colAccountNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAccountName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBalance = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnnewaccount = new DevExpress.XtraEditors.SimpleButton();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
             this.accountBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.accountBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
@@ -58,22 +58,8 @@
             // 
             // mvvmContext1
             // 
-            this.mvvmContext1.BindingExpressions.AddRange(new DevExpress.Utils.MVVM.BindingExpression[] {
-            DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(typeof(Test.Components.AccountView.AccountViewModel), "AccountNew", this.btnnewaccount),
-            DevExpress.Utils.MVVM.BindingExpression.CreatePropertyBinding(typeof(Test.Components.AccountView.AccountViewModel), "account", this.gridControl1, "DataSource")});
             this.mvvmContext1.ContainerControl = this;
             this.mvvmContext1.ViewModelType = typeof(Test.Components.AccountView.AccountViewModel);
-            // 
-            // btnnewaccount
-            // 
-            this.tablePanel1.SetColumn(this.btnnewaccount, 0);
-            this.btnnewaccount.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnnewaccount.Location = new System.Drawing.Point(13, 12);
-            this.btnnewaccount.Name = "btnnewaccount";
-            this.tablePanel1.SetRow(this.btnnewaccount, 0);
-            this.btnnewaccount.Size = new System.Drawing.Size(91, 22);
-            this.btnnewaccount.TabIndex = 2;
-            this.btnnewaccount.Text = "Konto hinzufügen";
             // 
             // gridControl1
             // 
@@ -125,6 +111,17 @@
             this.colBalance.Name = "colBalance";
             this.colBalance.Visible = true;
             this.colBalance.VisibleIndex = 2;
+            // 
+            // btnnewaccount
+            // 
+            this.tablePanel1.SetColumn(this.btnnewaccount, 0);
+            this.btnnewaccount.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnnewaccount.Location = new System.Drawing.Point(13, 12);
+            this.btnnewaccount.Name = "btnnewaccount";
+            this.tablePanel1.SetRow(this.btnnewaccount, 0);
+            this.btnnewaccount.Size = new System.Drawing.Size(91, 22);
+            this.btnnewaccount.TabIndex = 2;
+            this.btnnewaccount.Text = "Konto hinzufügen";
             // 
             // tablePanel1
             // 
