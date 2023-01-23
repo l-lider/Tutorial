@@ -1,4 +1,5 @@
-﻿using DevExpress.Utils.Filtering.Internal;
+﻿using DevExpress.Mvvm;
+using DevExpress.Utils.Filtering.Internal;
 using DevExpress.Utils.MVVM;
 using DevExpress.XtraEditors;
 using DevExpress.XtraExport.Helpers;
@@ -33,10 +34,9 @@ namespace Test.Components.AccountView
         {
             MVVMContextFluentAPI<AccountViewModel> fluent = mvvmContext1.OfType<AccountViewModel>();
 
-            fluent.BindCommand(btnnewaccount, viewModel => viewModel.AccountNew());
-
-            //BindingSource account = new BindingSource();
             fluent.SetBinding(gridControl1, gridControl => gridControl.DataSource, vm => vm.Account);
+
+            fluent.BindCommand(btnnewaccount, viewModel => viewModel.OpenAccountEdit());
 
         }
     }

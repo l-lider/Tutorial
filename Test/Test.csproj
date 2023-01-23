@@ -73,6 +73,13 @@
     <Compile Include="AccountNew.Designer.cs">
       <DependentUpon>AccountNew.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\AccountEditView\AccountEditView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\AccountEditView\AccountEditView.Designer.cs">
+      <DependentUpon>AccountEditView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\AccountEditView\AccountEditViewModel.cs" />
     <Compile Include="Components\AccountView\AccountView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -132,9 +139,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Components\AccountEditView\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

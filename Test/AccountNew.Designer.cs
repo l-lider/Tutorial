@@ -46,7 +46,7 @@
             // 
             // _simpleButton1Speichern
             // 
-            this._simpleButton1Speichern.Location = new System.Drawing.Point(23, 219);
+            this._simpleButton1Speichern.Location = new System.Drawing.Point(120, 233);
             this._simpleButton1Speichern.Name = "_simpleButton1Speichern";
             this._simpleButton1Speichern.Size = new System.Drawing.Size(75, 23);
             this._simpleButton1Speichern.TabIndex = 0;
@@ -55,7 +55,7 @@
             // 
             // _simpleButtonSchliessen
             // 
-            this._simpleButtonSchliessen.Location = new System.Drawing.Point(146, 219);
+            this._simpleButtonSchliessen.Location = new System.Drawing.Point(211, 233);
             this._simpleButtonSchliessen.Name = "_simpleButtonSchliessen";
             this._simpleButtonSchliessen.Size = new System.Drawing.Size(75, 23);
             this._simpleButtonSchliessen.TabIndex = 1;
