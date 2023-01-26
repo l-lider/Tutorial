@@ -73,6 +73,7 @@
     <Compile Include="AccountNew.Designer.cs">
       <DependentUpon>AccountNew.cs</DependentUpon>
     </Compile>
+    <Compile Include="AccountNewViewModel.cs" />
     <Compile Include="Components\AccountEditView\AccountEditView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -106,6 +107,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AccountNew.resx">
       <DependentUpon>AccountNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\AccountEditView\AccountEditView.resx">
+      <DependentUpon>AccountEditView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Components\AccountView\AccountView.resx">
       <DependentUpon>AccountView.cs</DependentUpon>

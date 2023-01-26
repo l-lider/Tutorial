@@ -19,6 +19,8 @@ namespace Test
         public AccountNew()
         {
             InitializeComponent();
+            if (!mvvmContext1.IsDesignMode)
+                InitializeBindings();
         }
 
         private void Speichern(object sender, EventArgs e)
@@ -33,6 +35,11 @@ namespace Test
         private void Schließen(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
+        }
+
+        void InitializeBindings()
+        {
+            var fluent = mvvmContext1.OfType<AccountNewViewModel>();
         }
     }
 }

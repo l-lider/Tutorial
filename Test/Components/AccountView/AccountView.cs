@@ -18,6 +18,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Test.Data;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace Test.Components.AccountView
 {
@@ -32,11 +33,16 @@ namespace Test.Components.AccountView
 
         void InitBindings()
         {
-            MVVMContextFluentAPI<AccountViewModel> fluent = mvvmContext1.OfType<AccountViewModel>();
+            MVVMContext.RegisterXtraDialogService();
 
+            MVVMContextFluentAPI<AccountViewModel> fluent = mvvmContext1.OfType<AccountViewModel>();
+            
             fluent.SetBinding(gridControl1, gridControl => gridControl.DataSource, vm => vm.Account);
 
             fluent.BindCommand(btnnewaccount, viewModel => viewModel.OpenAccountEdit());
+
+
+
 
         }
     }

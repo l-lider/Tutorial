@@ -5,46 +5,33 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows.Forms;
+using Test.Components.AccountEditView;
 using Test.Data;
 
 namespace Test.Components.AccountView
 {
     [POCOViewModel]
     public class AccountViewModel
+
+
     {
-        //protected IDialogService DialogService
-        //{
-        //    get { return this.GetService<IDialogService>(); }
-        //}
+
+        protected IDialogService DialogService
+        {
+            get { return this.GetService<IDialogService>(); }
+
+        }
 
         // hier wird der DialogService gestartet 
         // er brauch ein ViewModel und die darin enthaltenen UIcommands
         // die entsprechende View soll in dem Dialog angezeigt werden.
         // In dem Dialog sollen 2 Buttons (Schließen und Speichern) vorhanden sein.
-        
+
         public void OpenAccountEdit()
         {
-            var commands = new List<UICommand>
-        {
-            // Button with custom command attached
-            new UICommand {
-                Id = "Speichern",
-                Caption = "Speichern",
-                Command = new DelegateCommand(() =>{
-                     // . . . implement the Speichern command here 
-
-                 }),
-                IsDefault = true,
-                IsCancel = false,
-                Tag = DialogResult.OK
-            },
-            // standard button caption customization
-            new UICommand {
-                 Caption = "Schließen",
-                 Tag = DialogResult.Cancel
-            }
-        };
-            var editAccount = DialogService.ShowDialog(commands, "Konten bearbeiten", "Test", null, this);
+            AccountEditViewModel accountEditViewModel = new AccountEditViewModel();
+            
+            var editAccount = DialogService.ShowDialog(accountEditViewModel.Commands, "Konten bearbeiten", "AccountEditView", null, this);
 
         }
 
