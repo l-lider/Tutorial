@@ -4,6 +4,7 @@ using DevExpress.Mvvm.POCO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Security.Principal;
 using System.Windows.Forms;
 using Test.Components.AccountEditView;
 using Test.Data;
@@ -12,9 +13,9 @@ namespace Test.Components.AccountView
 {
     [POCOViewModel]
     public class AccountViewModel
-
-
     {
+        [BindableProperty]
+        public virtual BindingList<Account> AccountList { get; set; }
 
         protected IDialogService DialogService
         {
@@ -22,25 +23,32 @@ namespace Test.Components.AccountView
 
         }
 
-        // hier wird der DialogService gestartet 
-        // er brauch ein ViewModel und die darin enthaltenen UIcommands
-        // die entsprechende View soll in dem Dialog angezeigt werden.
-        // In dem Dialog sollen 2 Buttons (Schließen und Speichern) vorhanden sein.
-
         public void OpenAccountEdit()
         {
-            AccountEditViewModel accountEditViewModel = new AccountEditViewModel();
-            
-            var editAccount = DialogService.ShowDialog(accountEditViewModel.Commands, "Konten bearbeiten", "AccountEditView", null, this);
+            // soll mit Create() erstellt werden
+            AccountEditViewModel accountEditViewModel = AccountEditViewModel.Create(AccountList); //Viewodel A
 
+            //Welche Viewmodel? => Baut sich selbst eine
+            DialogService.ShowDialog(accountEditViewModel.Commands, "Konten bearbeiten", nameof(AccountEditView.AccountEditView), accountEditViewModel, null, this);
+
+       
+            //this.RaisePropertiesChanged();
+            //private BindingList<Account> account;
+            //this.account = new BindingList<Account>(Accounts.Konten);
+            //var source = new BindingSource(account, null);
+            //this.gridControl1.DataSource = account;
         }
 
 
-        public virtual List<Account> Account { get; set; }
+        //public virtual List<Account> Account { get; set; }
+
 
         public AccountViewModel()
         {
-            Account = Accounts.Konten;
+            this.AccountList = new BindingList<Account>(Accounts.Konten);
+            //BindingSource source = new BindingSource(AccountList, null);
+
+            //    Account = Accounts.Konten;
         }
 
 

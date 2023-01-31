@@ -1,5 +1,8 @@
-﻿using DevExpress.Utils.MVVM;
+﻿using DevExpress.ChartRangeControlClient.Core;
+using DevExpress.Utils.MVVM;
 using DevExpress.XtraEditors;
+using DevExpress.XtraGrid;
+using DevExpress.XtraReports.Diagnostics;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,32 +18,24 @@ namespace Test.Components.AccountEditView
 {
     public partial class AccountEditView : DevExpress.XtraEditors.XtraUserControl
     {
-
-        public Account AccountInfo { get; set; }
         public AccountEditView()
         {
             InitializeComponent();
-            if (!mvvmContext1.IsDesignMode)
-                InitializeBindings();
-        }
-
-        private void Speichern(object sender, EventArgs e)
-        {
-            AccountInfo.AccountNumber = textEdit1.Text;
-            AccountInfo.AccountName = textEdit2.Text;
-            AccountInfo.Balance = (decimal)spinEdit1.EditValue;
-
-            //this.DialogResult = DialogResult.OK;
-        }
-
-        private void Schließen(object sender, EventArgs e)
-        {
-           // this.DialogResult = DialogResult.Cancel;
+            if (mvvmContext1.IsDesignMode)
+            {
+                return;
+            }
+            InitializeBindings();            
         }
 
         void InitializeBindings()
         {
-            var fluent = mvvmContext1.OfType<AccountEditViewModel>();
+            MVVMContextFluentAPI<AccountEditViewModel> fluent = mvvmContext1.OfType<AccountEditViewModel>();
+
+            // Binding um TextEdit Inhalt ins ViewModel zu bringen
+            fluent.SetBinding(textEdit1, control => control.EditValue, viewmodel => viewmodel.Nummer);
+            fluent.SetBinding(textEdit2, control => control.EditValue, viewmodel => viewmodel.Name);
+            fluent.SetBinding(spinEdit1, control => control.EditValue, viewmodel => viewmodel.Betrag);
         }
     }
 }

@@ -53,7 +53,6 @@
             this._simpleButton1Speichern.Size = new System.Drawing.Size(75, 23);
             this._simpleButton1Speichern.TabIndex = 0;
             this._simpleButton1Speichern.Text = "Speichern";
-            this._simpleButton1Speichern.Click += new System.EventHandler(this.Speichern);
             // 
             // _simpleButtonSchliessen
             // 
@@ -62,7 +61,6 @@
             this._simpleButtonSchliessen.Size = new System.Drawing.Size(75, 23);
             this._simpleButtonSchliessen.TabIndex = 1;
             this._simpleButtonSchliessen.Text = "Schließen";
-            this._simpleButtonSchliessen.Click += new System.EventHandler(this.Schließen);
             // 
             // textEdit1
             // 
@@ -134,6 +132,7 @@
             this.Controls.Add(this._simpleButton1Speichern);
             this.Name = "AccountNew";
             this.Text = "AccountNew";
+
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).EndInit();

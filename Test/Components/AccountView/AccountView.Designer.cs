@@ -31,28 +31,18 @@
             this.components = new System.ComponentModel.Container();
             this.mvvmContext1 = new DevExpress.Utils.MVVM.MVVMContext(this.components);
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.accountBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colAccountNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAccountName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBalance = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnnewaccount = new DevExpress.XtraEditors.SimpleButton();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
-            this.accountBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            this.accountBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.accountBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.accountBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.mvvmContext1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +54,6 @@
             // gridControl1
             // 
             this.tablePanel1.SetColumn(this.gridControl1, 0);
-            this.gridControl1.DataSource = this.accountBindingSource4;
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl1.Location = new System.Drawing.Point(13, 46);
             this.gridControl1.MainView = this.gridView1;
@@ -74,10 +63,6 @@
             this.gridControl1.TabIndex = 3;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            // 
-            // accountBindingSource4
-            // 
-            this.accountBindingSource4.DataSource = typeof(Test.Data.Account);
             // 
             // gridView1
             // 
@@ -140,10 +125,6 @@
             this.tablePanel1.TabIndex = 0;
             this.tablePanel1.UseSkinIndents = true;
             // 
-            // accountBindingSource3
-            // 
-            this.accountBindingSource3.DataSource = typeof(Test.Data.Account);
-            // 
             // xtraTabbedMdiManager1
             // 
             this.xtraTabbedMdiManager1.MdiParent = null;
@@ -157,14 +138,9 @@
             this.Size = new System.Drawing.Size(439, 374);
             ((System.ComponentModel.ISupportInitialize)(this.mvvmContext1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.tablePanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
             this.ResumeLayout(false);
 
@@ -174,16 +150,11 @@
         private DevExpress.Utils.MVVM.MVVMContext mvvmContext1;
         private DevExpress.Utils.Layout.TablePanel tablePanel1;
         private DevExpress.XtraEditors.SimpleButton btnnewaccount;
-        private System.Windows.Forms.BindingSource accountBindingSource;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private System.Windows.Forms.BindingSource accountBindingSource1;
-        private System.Windows.Forms.BindingSource accountBindingSource2;
         private DevExpress.XtraGrid.Columns.GridColumn colAccountNumber;
         private DevExpress.XtraGrid.Columns.GridColumn colAccountName;
         private DevExpress.XtraGrid.Columns.GridColumn colBalance;
-        private System.Windows.Forms.BindingSource accountBindingSource3;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
-        private System.Windows.Forms.BindingSource accountBindingSource4;
     }
 }

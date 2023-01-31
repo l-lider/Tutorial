@@ -34,12 +34,12 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.mvvmContext1 = new DevExpress.Utils.MVVM.MVVMContext(this.components);
             this.spinEdit1 = new DevExpress.XtraEditors.SpinEdit();
+            this.mvvmContext1 = new DevExpress.Utils.MVVM.MVVMContext(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mvvmContext1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mvvmContext1)).BeginInit();
             this.SuspendLayout();
             // 
             // textEdit1
@@ -80,10 +80,6 @@
             this.labelControl3.TabIndex = 5;
             this.labelControl3.Text = "Kontostand";
             // 
-            // mvvmContext1
-            // 
-            this.mvvmContext1.ContainerControl = this;
-            // 
             // spinEdit1
             // 
             this.spinEdit1.EditValue = new decimal(new int[] {
@@ -96,6 +92,11 @@
             this.spinEdit1.Properties.AllowMouseWheel = false;
             this.spinEdit1.Size = new System.Drawing.Size(100, 20);
             this.spinEdit1.TabIndex = 9;
+            // 
+            // mvvmContext1
+            // 
+            this.mvvmContext1.ContainerControl = this;
+            this.mvvmContext1.ViewModelType = typeof(Test.Components.AccountEditView.AccountEditViewModel);
             // 
             // AccountEditView
             // 
@@ -111,8 +112,8 @@
             this.Size = new System.Drawing.Size(318, 313);
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mvvmContext1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mvvmContext1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

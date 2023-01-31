@@ -14,6 +14,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,11 +25,12 @@ namespace Test.Components.AccountView
 {
     public partial class AccountView : DevExpress.XtraEditors.XtraUserControl
     {
+
         public AccountView()
         {
             InitializeComponent();
             InitBindings();
-            
+
         }
 
         void InitBindings()
@@ -36,13 +38,11 @@ namespace Test.Components.AccountView
             MVVMContext.RegisterXtraDialogService();
 
             MVVMContextFluentAPI<AccountViewModel> fluent = mvvmContext1.OfType<AccountViewModel>();
-            
-            fluent.SetBinding(gridControl1, gridControl => gridControl.DataSource, vm => vm.Account);
 
+            // DatabindingSource 
+
+            fluent.SetBinding(gridControl1, gridControl => gridControl.DataSource, vm => vm.AccountList);
             fluent.BindCommand(btnnewaccount, viewModel => viewModel.OpenAccountEdit());
-
-
-
 
         }
     }

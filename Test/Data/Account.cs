@@ -30,7 +30,6 @@ namespace Test.Data
         }
 
         // => wenn nur eine Zeile / Keine {}
-        // ? wenn nicht null, dann weiter
         private void OnPropertyChanged([CallerMemberName] string propertyName = null) =>
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
