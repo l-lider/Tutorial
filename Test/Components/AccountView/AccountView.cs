@@ -42,8 +42,9 @@ namespace Test.Components.AccountView
             // DatabindingSource 
 
             fluent.SetBinding(gridControl1, gridControl => gridControl.DataSource, vm => vm.AccountList);
-            fluent.BindCommand(btnnewaccount, viewModel => viewModel.OpenAccountEdit());
+            fluent.BindCommand(btnnewaccount, viewModel => viewModel.OpenAccountNew());
 
+            
         }
     }
 }

@@ -23,16 +23,17 @@ namespace Test.Components.AccountView
 
         }
 
-        public void OpenAccountEdit()
+        public void OpenAccountNew()
         {
             // soll mit Create() erstellt werden
             AccountEditViewModel accountEditViewModel = AccountEditViewModel.Create(AccountList); //Viewodel A
 
             //Welche Viewmodel? => Baut sich selbst eine
             DialogService.ShowDialog(accountEditViewModel.Commands, "Konten bearbeiten", nameof(AccountEditView.AccountEditView), accountEditViewModel, null, this);
+            
 
-       
-            //this.RaisePropertiesChanged();
+
+            this.RaisePropertiesChanged();
             //private BindingList<Account> account;
             //this.account = new BindingList<Account>(Accounts.Konten);
             //var source = new BindingSource(account, null);

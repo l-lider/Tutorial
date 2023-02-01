@@ -14,6 +14,8 @@ namespace Test.Components.AccountEditView
     {
         public List<UICommand> Commands { get; set; }
         public BindingList<Account> AccountList { get; set; }
+
+
         public Account AccountNeu
         {
             get;
@@ -72,9 +74,31 @@ namespace Test.Components.AccountEditView
 
         private bool CanSpeichern()
         {
-            return true;
+            if (!String.IsNullOrEmpty(Nummer) && !String.IsNullOrEmpty(Name) && Betrag != null)
+            {
+                return true;
+            }
+
+            return false;
         }
 
+        protected void OnNummerChanged()
+        {
+            CanSpeichern();
+            _delegateSaveCommand.RaiseCanExecuteChanged();
+        }
+
+        protected void OnNameChanged()
+        {
+            CanSpeichern();
+            _delegateSaveCommand.RaiseCanExecuteChanged();
+        }
+
+        protected void OnBetragChanged()
+        {
+            CanSpeichern();
+            _delegateSaveCommand.RaiseCanExecuteChanged();
+        }
 
         private void Speichern()
         {
